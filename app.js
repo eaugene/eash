@@ -69,7 +69,7 @@ console.log("12");
             console.log(ea);
             var myquery = { key:"last" };
             var newvalues = { key:"last" , value : ea };
-            dbo.collection("datas").updateOne(myquery, newvalues, function(err, res) {
+            dbo.collection("datas").updateOne(myquery, {$set:newvalues}, function(err, res) {
                 if (err) throw err;
                 console.log("14");
                 console.log("last updated");
